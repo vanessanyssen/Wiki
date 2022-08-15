@@ -14,13 +14,17 @@ _**Sources:**_
 
 Going from:
 
+<!-- {% raw %} -->
+
 ```html
 <h1>{{ 'HOME.HELLO' | translate: param }}!</h1>
 ```
 
+<!-- {% endraw %} -->
+
 to:
 
-```html
+```
 <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 ```
 
@@ -29,12 +33,12 @@ where `t` is a **_Typed object_** representing the translation key-values.
 It can be provided through the constructor of the component :
 
 ```typescript
-  constructor(public t: T9nService) {}
+constructor(public t: T9nService) {}
 ```
 
 or with a structural directive that'll inject the service as context directly into the view :
 
-```html
+```
 <ng-container *t9n="let t">
   <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 </ng-container>
@@ -271,12 +275,12 @@ The loader has been called `WebpackTranslateLoader` because `Webpack` is the one
 Finally, in order to use it in our template, we mist import the service in the constructor of our component :
 
 ```typescript
-  constructor(public t: T9nService) {}
+constructor(public t: T9nService) {}
 ```
 
 and
 
-```html
+```
 <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 ```
 
@@ -286,7 +290,7 @@ and
 
 In a structural directive we can inject context in order to use it in our projected template.
 
-```html
+```
 <div *foo="let bar">{{ bar }}</div>
 ```
 
