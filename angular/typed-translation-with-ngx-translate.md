@@ -1,4 +1,5 @@
 [Home](../README.md) /
+
 # Typed Translation with @Ngx-Translate
 
 _**Sources:**_
@@ -77,13 +78,12 @@ _**Cons**_
 - Migration : we have to update all the translation key-strings in our templates to use the translations service...
   - but it can be done progressively, as it's still working with the old key-strings.
 
-__
 (\*) _About cache_
 
->When we use Webpack Dynamic Imports, we don't have to worry anymore about cache and cache-busting.
->Each translation file is lazy loaded when user change the language, no cache is used.
->Webpack creates a separate chunk for each one of the translation files. When we run `ng build --configuration production`, all files are named using a hash, based on the file's content checksum.
->As long as the content of the file isn't changed, we'll always get the same hash.
+> When we use Webpack Dynamic Imports, we don't have to worry anymore about cache and cache-busting.
+> Each translation file is lazy loaded when user change the language, no cache is used.
+> Webpack creates a separate chunk for each one of the translation files. When we run `ng build --configuration production`, all files are named using a hash, based on the file's content checksum.
+> As long as the content of the file isn't changed, we'll always get the same hash.
 
 ---
 
@@ -119,7 +119,7 @@ Sometimes, this can also be found in this format :
 
 To identify the key that we want to translate we must specify a string. This causes us to lose all the type control of the variables that we want to translate.
 
-We do not have autocomplete, despite having nested objects that can be complex. So we must be very carefull and check in the translation file if the path is correct : if we made a typo, or missed a nested key, our faithful IDE (aka vscode) won't be able to warn us ;\_;
+We do not have autocomplete, despite having nested objects that can be complex. So we must be very carefull and check in the translation file if the path is correct : if we made a typo, or missed a nested key, our IDE won't be able to warn us.
 
 Also, if we add a new translation, and forgot to add it in one file, we have no mean to know it other than deploying and checking all the pages in all the languages !
 
@@ -138,14 +138,14 @@ const en = {
   HOME: {
     HELLO: 'Welcome to {{value}}',
     LINKS: {
-      content: 'Here are some links to help you start:,
+      content: 'Here are some links to help you start':,
       first: 'Tour of Heroes',
       second: 'CLI documentation',
       third: 'Angular blog'
     }
   }
 };
-export default en
+export default en;
 ```
 
 We must not forget to add the Type in the other files, so our IDE can inform us (with nice little red wave) if the structure is not exactly the same (missing keys, typos, etc.).
@@ -197,8 +197,10 @@ import en from "src/i18n/en";
 })
 export class T9nService extends GenericClass<typeof en>() {
   constructor() {
-    super(); // has all same properties as 'en' (typeof en)
-    Object.assign(this, transformObjectToPath("", en)); // add its own path as value for each (nested) properties
+    super();
+    // has all same properties as 'en' (typeof en)
+    Object.assign(this, transformObjectToPath("", en));
+    // add its own path as value for each (nested) properties
   }
 }
 ```
@@ -272,7 +274,7 @@ Finally, in order to use it in our template, we mist import the service in the c
   constructor(public t: T9nService) {}
 ```
 
-And
+and
 
 ```html
 <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
@@ -280,14 +282,12 @@ And
 
 ## Icing on the cake : inject the translation service with a structural directive
 
-
-
 ### Structural directive
 
 In a structural directive we can inject context in order to use it in our projected template.
 
 ```html
-<div *appFoo="let bar">{{ bar }}</div>
+<div *foo="let bar">{{ bar }}</div>
 ```
 
 `let bar` is the same as `let bar = $implicit`. The `$implicit` variable is sugared syntax as you can omit it when connecting to a variable.
@@ -298,27 +298,29 @@ Let's create this "simple" structural directive:
 type Ctx = { $implicit: string };
 
 @Directive({
-  selector: "[appFoo]",
+  selector: "[foo]",
 })
 export class FooDirective implements OnInit {
   private context: Ctx;
 
   constructor(
-    private templateRef: TemplateRef<Ctx>, // gets a reference to the template where the directive is used
+    private templateRef: TemplateRef<Ctx>,
+    // gets a reference to the template where the directive is used
     private viewContainer: ViewContainerRef // get a view container to render the template
   ) {
-    this.context = { $implicit: "portnaouak" };
+    this.context = { $implicit: "foo" };
   }
 
   ngOnInit(): void {
-    this.viewContainer.createEmbeddedView(this.templateRef, this.context); // render the template in the view container, with it's additionnal context
+    this.viewContainer.createEmbeddedView(this.templateRef, this.context);
+    // render the template in the view container, with it's additionnal context
   }
 }
 ```
 
 ```html
-<div *appFoo="let bar">{{ bar }}</div>
-<!-- will render portnaouak -->
+<div *foo="let bar">{{ bar }}</div>
+<!-- will render 'foo' -->
 ```
 
 ### Typing the context
@@ -329,7 +331,7 @@ You can properly type it inside the template by providing a static `ngTemplateCo
 
 ```typescript
 @Directive({
-  selector: "[appFoo]",
+  selector: "[foo]",
 })
 export class FooDirective implements OnInit {
   //...
@@ -341,7 +343,7 @@ export class FooDirective implements OnInit {
 }
 ```
 
-Use vscode extension "Angular Language Service". To get the most complete information in the editor, set the `strictTemplates` option in `tsconfig.json`, as shown here:
+Use vscode extension "[Angular Language Service](https://marketplace.visualstudio.com/items?itemName=TypeScriptTeam.AngularLanguageService)". To get the most complete information in the editor, set the `strictTemplates` option in `tsconfig.json`, as shown here:
 
 ```json
 "angularCompilerOptions": {
@@ -353,7 +355,7 @@ Use vscode extension "Angular Language Service". To get the most complete inform
 
 ```typescript
 @Directive({
-  selector: "[appT9n]",
+  selector: "[t9n]",
 })
 export class T9nDirective implements OnInit {
   constructor(
@@ -376,5 +378,3 @@ export class T9nDirective implements OnInit {
   }
 }
 ```
-
-
