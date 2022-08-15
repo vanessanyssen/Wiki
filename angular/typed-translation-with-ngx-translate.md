@@ -1,16 +1,6 @@
 [Home](../README.md) /
 # Typed Translation with @Ngx-Translate
 
-1. [TL;DR](#tldr)
-2. [The problem](#the-problem)
-3. [The solution](#the-solution)
-   1. [Typing the translation files](#typing-the-translation-files)
-   2. [The translation service](#the-translation-service)
-4. [Icing on the cake : inject the translation service with a structural directive](#icing-on-the-cake--inject-the-translation-service-with-a-structural-directive)
-   1. [Structural directive](#structural-directive)
-   2. [Typing the context](#typing-the-context)
-   3. [Directive for the translation service](#directive-for-the-translation-service)
-
 _**Sources:**_
 
 - [Angular + @ngx-translate + Typings (Carlos Caballero)](https://www.carloscaballero.io/angular-ngx-translate-typings/)
