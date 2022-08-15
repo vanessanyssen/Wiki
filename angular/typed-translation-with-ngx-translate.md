@@ -14,9 +14,13 @@ _**Sources:**_
 
 Going from:
 
+<!-- {% raw %} -->
+
 ```html
 <h1>{{ 'HOME.HELLO' | translate: param }}!</h1>
 ```
+
+<!-- {% endraw %} -->
 
 to:
 
