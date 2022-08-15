@@ -22,7 +22,7 @@ to:
 
 <!-- {% raw %} -->
 
-```
+```html
 <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 ```
 
@@ -276,17 +276,21 @@ export class AppModule {}
 
 The loader has been called `WebpackTranslateLoader` because `Webpack` is the one in charge of analyzing the possible files that are imported with the keyword `import (...)` and packages them as independent sources in order to carry out their request dynamically.
 
-Finally, in order to use it in our template, we mist import the service in the constructor of our component :
+Finally, in order to use it in our template, we must import the service in the constructor of our component :
 
 ```typescript
 constructor(public t: T9nService) {}
 ```
 
-and
+and thus:
 
-```
+<!-- {% raw %} -->
+
+```html
 <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 ```
+
+<!-- {% endraw %} -->
 
 ## Icing on the cake : inject the translation service with a structural directive
 
@@ -294,9 +298,13 @@ and
 
 In a structural directive we can inject context in order to use it in our projected template.
 
-```
+<!-- {% raw %} -->
+
+```html
 <div *foo="let bar">{{ bar }}</div>
 ```
+
+<!-- {% endraw %} -->
 
 `let bar` is the same as `let bar = $implicit`. The `$implicit` variable is sugared syntax as you can omit it when connecting to a variable.
 
@@ -326,10 +334,14 @@ export class FooDirective implements OnInit {
 }
 ```
 
+<!-- {% raw %} -->
+
 ```html
 <div *foo="let bar">{{ bar }}</div>
 <!-- will render 'foo' -->
 ```
+
+<!-- {% endraw %} -->
 
 ### Typing the context
 
