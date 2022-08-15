@@ -14,19 +14,19 @@ _**Sources:**_
 
 Going from:
 
-<!-- {% raw %} -->
-
 ```html
 <h1>{{ 'HOME.HELLO' | translate: param }}!</h1>
 ```
 
-<!-- {% endraw %} -->
-
 to:
+
+<!-- {% raw %} -->
 
 ```
 <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 ```
+
+<!-- {% endraw %} -->
 
 where `t` is a **_Typed object_** representing the translation key-values.
 
@@ -38,11 +38,15 @@ constructor(public t: T9nService) {}
 
 or with a structural directive that'll inject the service as context directly into the view :
 
-```
+<!-- {% raw %} -->
+
+```html
 <ng-container *t9n="let t">
   <h1>{{ t.HOME.HELLO | translate: param }}!</h1>
 </ng-container>
 ```
+
+<!-- {% endraw %} -->
 
 Use TS Object for you translations :
 
