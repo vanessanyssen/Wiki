@@ -2,9 +2,9 @@
 
 ## ANGULAR & TYPESCRIPT
 
-- [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md) :star:
+- [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md) ⭐
 - Strict type
-  - TSConfig "type": "strict" :star:
+  - TSConfig "type": "strict" ⭐
   - Improve incrementally with Betterer
   - Eslint + Prettier
     > Note: TSLint has been deprecated as of 2019.
@@ -18,8 +18,8 @@
 
 ## ANGULAR 14
 
-- Standalone component : prepare with SCAM + AIM :star:
-- `inject` function and dependency injection functions :star:
+- Standalone component : prepare with SCAM + AIM ⭐
+- `inject` function and dependency injection functions ⭐
 - Typed Forms - see Typed formBuilder
 
 ## ANGULAR STRUCTURE
