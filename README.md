@@ -2,23 +2,28 @@
 
 ## ANGULAR & TYPESCRIPT
 
-- [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md) ⭐
-- Strict type
-  - TSConfig "type": "strict" ⭐
-  - Improve incrementally with Betterer
-  - Eslint + Prettier
+- [Tune up the strictness](angular/tune-up-the-strictness.md)⭐
+  - Typescript `strict` flag
+  - Angular `strictTemplates` flag and `extendedDiagnostics` (ng13)
+  - Improve incrementally with **Betterer**
+  - Use **Eslint** + **Prettier**
     > Note: TSLint has been deprecated as of 2019.
-    > Typescript-Eslint is now your best option for linting TypeScript
-    > Use Prettier for formatting rules
-- Generic types, Type-Guard and Mapped type to ease your life
-- You don't have to use Enums (TS-playground)
+    > Typescript-Eslint is now your best option for linting TypeScript.
+    > Use Prettier for formatting rules.
+  - Good practices
+- [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md) ⭐
+  - Add auto-completion and strong typing to your translations in the template
+  - Catch any error at compile time
+- Generic types, Type-Guards and Mapped types to ease your life
+- You don't have to use Enums
   - Beware of numeric enum
-  - How enums are compiled by tsc
+  - How enums are compiled in javascript
   - Replace enum in Angular ?
 
 ## ANGULAR 14
 
-- Standalone component : prepare with SCAM + AIM ⭐
+- Standalone component ⭐
+  - prepare with SCAM + AIM 
 - `inject` function and dependency injection functions ⭐
 - Typed Forms - see Typed formBuilder
 
