@@ -4,12 +4,11 @@
 
 - [Tune up the strictness](angular/tune-up-the-strictness.md)⭐
   - Typescript `strict` flag
-  - Angular `strictTemplates` flag and `extendedDiagnostics` (ng13)
+  - Angular `strictTemplates` flag and `extendedDiagnostics` (Ng13)
   - Improve incrementally with **Betterer**
-  - Use **Eslint** + **Prettier**
+  - Use **Eslint**
     > Note: TSLint has been deprecated as of 2019.
     > Typescript-Eslint is now your best option for linting TypeScript.
-    > Use Prettier for formatting rules.
   - Good practices
 - [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md) ⭐
   - Add auto-completion and strong typing to your translations in the template
@@ -29,7 +28,7 @@
 
 ## ANGULAR STRUCTURE
 
-- Page / Container / View + LIFT rule
+- Page / Container / View + LIFT rules
   - Page components - lazy loaded (→ route data & params)
   - Container ("smart") components (→ domain/features)
   - View ("dumb") components (→ reusable ui components)
@@ -47,7 +46,6 @@
   - Works well with changeDetectionStrategy onPush
 - Dynamic form errors
   - Add dynamiccaly errors to your field forms
-  - 1 service to unit test !
 
 ## ANGULAR PERFORMANCE
 
@@ -60,7 +58,7 @@
 
 ## ANGULAR DYNAMIC/GENERIC COMPONENTS
 
-- dynamic/automatic navigation
+- Dynamic/automatic navigation
   - ActiveRoute service with childrenPath
 - Generic component to display data
   - Dynamic pipe

@@ -4,7 +4,6 @@
 
 _**Sources:**_
 
-- [Be proactive when you join an Angular project](https://timdeschryver.dev/blog/be-proactive-when-you-join-an-angular-project#tune-up-the-strictness)
 - [Why to and How To Use Strict Mode in Angular Applications](https://betterprogramming.pub/why-to-and-how-to-use-strict-mode-in-angular-applications-1e6f6ffc0595)
 - [Bulletproof Angular. Angular strict mode explained](https://indepth.dev/posts/1402/bulletproof-angular)
 - [Bulletproof TypeScript — code quality rules beyond strict mode](https://medium.com/generic-ui/bulletproof-typescript-code-quality-rules-beyond-strict-mode-315e48611a88)
@@ -26,26 +25,26 @@ The strict mode can be enabled by setting the `compilerOptions.strict` property 
 
 `.strict` flag is a superset containing multiple strict options. Each option can be enabled separately :
 
-- [`alwaysStrict`](https://www.typescriptlang.org/tsconfig#alwaysStrict)
-- [`strictNullChecks`](https://www.typescriptlang.org/tsconfig#strictNullChecks)
-- [`strictBindCallApply`](https://www.typescriptlang.org/tsconfig#strictBindCallApply)
-- [`strictFunctionTypes`](https://www.typescriptlang.org/tsconfig#strictFunctionTypes)
-- [`strictPropertyInitialization`](https://www.typescriptlang.org/tsconfig#strictPropertyInitialization)
-- [`noImplicitAny`](https://www.typescriptlang.org/tsconfig#noImplicitAny)
-- [`noImplicitThis`](https://www.typescriptlang.org/tsconfig#noImplicitThis)
-- [`useUnknownInCatchVariable`](https://www.typescriptlang.org/tsconfig#useUnknownInCatchVariables)
+- [alwaysStrict](https://www.typescriptlang.org/tsconfig#alwaysStrict)
+- [strictNullChecks](https://www.typescriptlang.org/tsconfig#strictNullChecks)
+- [strictBindCallApply](https://www.typescriptlang.org/tsconfig#strictBindCallApply)
+- [strictFunctionTypes](https://www.typescriptlang.org/tsconfig#strictFunctionTypes)
+- [strictPropertyInitialization](https://www.typescriptlang.org/tsconfig#strictPropertyInitialization)
+- [noImplicitAny](https://www.typescriptlang.org/tsconfig#noImplicitAny)
+- [noImplicitThis](https://www.typescriptlang.org/tsconfig#noImplicitThis)
+- [useUnknownInCatchVariable](https://www.typescriptlang.org/tsconfig#useUnknownInCatchVariables)
 
 Besides the `strict` flag, you can also enable more properties that result in a safer environment :
 
 - Inheritance 
-  - [`noImplicitOverride`](https://www.typescriptlang.org/tsconfig#noImplicitOverride)
+  - [noImplicitOverride](https://www.typescriptlang.org/tsconfig#noImplicitOverride)
 
 - Index signatures
-  - [`noPropertyAccessFromIndexSignature`](https://www.typescriptlang.org/tsconfig#noPropertyAccessFromIndexSignature)
+  - [noPropertyAccessFromIndexSignature](https://www.typescriptlang.org/tsconfig#noPropertyAccessFromIndexSignature)
 
 - Critical path
-  - [`noImplicitReturns`](https://www.typescriptlang.org/tsconfig#noImplicitReturns)
-  - [`noFallthroughCasesInSwitch`](https://www.typescriptlang.org/tsconfig#noFallthroughCasesInSwitch)
+  - [noImplicitReturns](https://www.typescriptlang.org/tsconfig#noImplicitReturns)
+  - [noFallthroughCasesInSwitch](https://www.typescriptlang.org/tsconfig#noFallthroughCasesInSwitch)
 
 **These are now enabled by default in a new Angular 13 project**.
 
