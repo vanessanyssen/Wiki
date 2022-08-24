@@ -10,7 +10,7 @@
     > Note: TSLint has been deprecated as of 2019.
     > Typescript-Eslint is now your best option for linting TypeScript.
   - Good practices
-- [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md) ⭐
+- [Typed Translation with @Ngx-Translate](angular/typed-translation-with-ngx-translate.md)⭐
   - Add auto-completion and strong typing to your translations in the template
   - Catch any error at compile time
 - Generic types, Type-Guards and Mapped types to ease your life
@@ -21,14 +21,16 @@
 
 ## ANGULAR 14
 
-- Standalone component ⭐
+- [Standalone component](angular/standalone-component.md)⭐
   - prepare with SCAM + AIM 
-- `inject` function and dependency injection functions ⭐
+- `inject` function and dependency injection functions
 - Typed Forms - see Typed formBuilder
 
 ## ANGULAR STRUCTURE
 
-- Page / Container / View + LIFT rules
+- Absolute Imports and Module path aliases
+- LIFT rules
+- Page / Container / View
   - Page components - lazy loaded (→ route data & params)
   - Container ("smart") components (→ domain/features)
   - View ("dumb") components (→ reusable ui components)
